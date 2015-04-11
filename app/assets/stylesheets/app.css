@@ -103,3 +103,32 @@ img {
 	border-radius: 0;
 }
 
+.transparent {
+   background: rgba(0,0,0,0);
+   border: none;
+}
+
+
+.navbar-default .navbar-toggle {
+	border-color: white;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: white;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: rgb(236, 51, 96);
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: white;
+  font-family: 'Raleway', sans-serif;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+  color: white;
+  font-family: 'Raleway', sans-serif;
+font-weight: 400;
+}
+
