@@ -1,0 +1,105 @@
+body {
+	background-image: url(http://www.transparenttextures.com/patterns/az-subtle.png);
+	background-color: #911A47;
+	color: white;
+	min-height: 650px;
+	width: 100%;
+}
+
+#beer {
+	text-align: center;
+}
+
+
+#subHeading {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 400;
+	text-align: center;
+}
+
+#heading {
+	font-family: 'Raleway', sans-serif;
+	margin-top: 50px;
+	font-weight: 900;
+	font-size: 70px;
+	letter-spacing: 5px;
+	text-align: center;
+
+
+}
+
+#product-image {
+	box-shadow: 0 0 50px rgba(0,0,0,.8);
+}
+
+.btn-default {
+	color: white;
+	background-color: #EC3360;
+	border: none;
+	font-size: 18px;
+	font-weight: 600;
+	margin-bottom: 25px;
+	margin-top: 25px;
+	width: 80%;
+}
+
+.btn-default:hover {
+	color: white;
+	background-color: #ea1c4e;
+}
+
+.btn-primary {
+	color: white;
+	background-color: #337ab7;
+	border: none;
+	font-size: 18px;
+	font-weight: 600;
+	width: 80%;
+}
+
+img {
+  margin-left: auto;
+  margin-right: auto;	
+  display: block;
+  clear: both;
+}
+
+.pricingInfo {
+	clear: both;
+	background-color: white;
+	color: black;
+}
+
+.section2 {
+	clear: both;
+	background-image: url(http://www.transparenttextures.com/patterns/az-subtle.png);
+	background-color: #911A47;
+	color: white;
+}
+
+.planName {
+  background-color: #911A47;
+  margin-top: 50px;
+  padding-bottom: 10px;
+  text-align: center;
+  color: white;
+}
+
+.price {
+	background-color: #EC3360;
+  padding: 5px;
+  border-radius: 100%;
+}
+
+.planFeatures {
+	background-color: #e8e9ea;
+	color: black;
+}
+
+.btn-success {
+	background-color: #337ab7;
+	width: 100%;
+	margin: 0;
+	border-radius: 0;
+}
+
