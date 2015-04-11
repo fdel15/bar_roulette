@@ -2,7 +2,6 @@ class SessionsController < ApplicationController
   # before_action :logged_in?
 
   def new
-    #@user = User.new
   end
 
   def create
@@ -15,12 +14,5 @@ class SessionsController < ApplicationController
       render text: "Log in Failed!"
     end
   end
-
-  end
-
-  # def logged_in?
-
-
-  # end
 
 end
