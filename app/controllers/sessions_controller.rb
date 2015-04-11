@@ -6,8 +6,9 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by(email: params[:email])
-
-    if @user && @user == @user.where(password: params[:password])
+    p params
+    p @user.password
+    if @user && @user.password == params[:password]
       log_in(@user)
       render text: "You Logged in!"
     else

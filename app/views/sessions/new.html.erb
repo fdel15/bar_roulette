@@ -5,8 +5,23 @@
 	<div class="text-center">
 		<a href='/signup' type="button" class="btn btn-default btn-lg" data-toggle="modal" >Register Now</a href='/signup'>
 	</div>
-	<div class="text-center">
-		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Log In</button>
-	</div>
+	<%= form_tag({controller: "sessions", action:"create"}, method: "post") do %>
+
+  <div class="field">
+    <%= label_tag :email %><br>
+    <%= email_field_tag :email %>
+  </div>
+  <div class="field">
+    <%= label_tag :password %><br>
+    <%= password_field_tag :password %>
+  </div>
+  <div class="actions">
+    <%= submit_tag %>
+  </div>
+<% end %>
+
+	<!-- <div class="text-center"> -->
+		<!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Log In</button> -->
+<!-- 	</div> -->
 	<img class="img-responsive" id="product-image" src="" alt="">
 </div>
