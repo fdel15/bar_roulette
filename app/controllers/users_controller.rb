@@ -36,13 +36,24 @@ class UsersController < ApplicationController
     end
   end
 
-  def user_params
-      params.require(:user).permit(:email, :password, :_id)
-  end
-
   def hopbar
-    "hello wolrd"
+    p '*'*100
+    p params
+    coordinates = params[:coordinates]
+    @bar = retrieve_bar(coordinates)
+    @address = bar_address
+    @image = bar_image
+    @rating = bar_rating_image
+    @status = bar_status
+    @name = bar_name
+    render 'hopbar.html.erb'
   end
+  private
+    def user_params
+        params.require(:user).permit(:email, :password, :_id)
+    end
+
+
 
   def test
     coordinates = { latitude: 37.7577, longitude: -122.4376 }

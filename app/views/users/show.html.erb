@@ -6,8 +6,10 @@
 				</article>
 			</div>
 		</div>
-		<button id="barHop" type="button" class="btn btn-default btn-lg">
-		Hop To Bar
-		</button>
+		<%= form_tag("/random", method: "get") do %>
+		  <%= hidden_field :coordinates , :latitude, id:'latitude'%>
+		  <%= hidden_field :coordinates , :longitude, id:"longitude" %>
+		  <%= submit_tag("Hop To Bar" , class:"btn btn-default btn-lg", :id=> "some_id") %>
+		<% end %>
 	</div>
 </div>

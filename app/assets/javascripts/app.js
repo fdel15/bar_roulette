@@ -24,6 +24,23 @@ function success(position) {
       map: map,
       title:"You are here!"
   });
+
+  var latitude = position.coords.latitude;
+  var longitude = position.coords.longitude;
+
+  document.getElementById("latitude").value = latitude;
+  document.getElementById("longitude").value = longitude;
+
+  geocoder = new google.maps.Geocoder();
+
+  var longs = geocoder.geocode( { 'address': "4900 Arlington Avenue, Bronx, NY"}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        console.log(results[0].geometry.location)
+      } else {
+        alert("Geocode was not successful for the following reason: " + status);
+      }
+    });
+
 }
 
 if (navigator.geolocation) {
@@ -31,3 +48,4 @@ if (navigator.geolocation) {
 } else {
   error('Geo Location is not supported');
 }
+

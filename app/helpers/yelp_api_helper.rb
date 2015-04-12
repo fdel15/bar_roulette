@@ -2,7 +2,9 @@ module YelpApiHelper
   def retrieve_bar(coordinates)
     CLIENT.search_by_coordinates(coordinates, {category_filter: 'bars', radius_filter: 8047, limit: 10 }).businesses.shuffle.first
   end
-
+  def bar_name
+    @bar.name
+  end
   def bar_status
     @bar.is_closed ? "Closed" : "Open"
   end
