@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     p @user.password
     if @user && @user.password == params[:password]
       log_in(@user)
-      render text: "You Logged in!"
+      render text: current_user
     else
       render text: "Log in Failed!"
     end
