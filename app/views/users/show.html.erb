@@ -7,8 +7,8 @@
 			</div>
 		</div>
 		<%= form_tag("/random", method: "get") do %>
-		  <%= hidden_field_tag :latitud , 'latitude', id:'latitude'%>
-		  <%= hidden_field_tag :logitud , 'longitude', id:"longitude" %>
+		  <%= hidden_field :coordinates , :latitude, id:'latitude'%>
+		  <%= hidden_field :coordinates , :longitude, id:"longitude" %>
 		  <%= submit_tag("Hop To Bar" , class:"btn btn-default btn-lg", :id=> "some_id") %>
 		<% end %>
 	</div>

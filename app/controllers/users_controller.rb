@@ -37,8 +37,15 @@ class UsersController < ApplicationController
   end
 
   def hopbar
-    p'*' *50
+    p '*'*100
     p params
+    coordinates = params[:coordinates]
+    @bar = retrieve_bar(coordinates)
+    @address = bar_address
+    @image = bar_image
+    @rating = bar_rating_image
+    @status = bar_status
+    @name = bar_name
     render 'hopbar.html.erb'
   end
   private
