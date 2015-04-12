@@ -20,7 +20,41 @@ body {
   text-align: center;
 }
 .bar-img{
-  width: 200px;
+  width: 250px;
+  border-color: grey;
+  border-style: solid;
+  border-width: 5px;
+  border-radius: 10px;
+}
+#barHop-skip{
+  background: none;
+  border-style: none;
+  color: #4ACFFF;
+  font-size: 1.5em;
+}
+.restaurant-name{
+  margin: 20px;
+  font-size: 2em;
+  font-weight: bolder;
+}
+.info-restaurant{
+
+  margin-top: 10px;
+  background-color: rgba(0,0,0,0.1);
+  border-radius: 20px;
+  padding: 10px;
+}
+.restaurant-description{
+font-size: 1.2em;
+}
+.restaurant-status{
+  font-size: 2em;
+  color: #13B236;
+  font-weight: bolder;
+}
+.bar-rating{
+  margin-top: 30px;
+   height: 40px;
 }
 #subHeading {
 	font-family: 'Raleway', sans-serif;
