@@ -16,4 +16,9 @@ class SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    session[:user_id] = nil
+    render text: "Logged out...for now"
+  end
+
 end
