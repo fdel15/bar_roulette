@@ -39,8 +39,10 @@ body {
 	font-size: 18px;
 	font-weight: 600;
 	margin-bottom: 25px;
-	margin-top: 25px;
+	margin-top: 5px;
 	width: 80%;
+	padding-top: 12px;
+	padding-bottom: 12px;
 }
 
 .btn-default:hover {
@@ -48,13 +50,17 @@ body {
 	background-color: #ea1c4e;
 }
 
-.btn-primary {
+.login {
 	color: white;
 	background-color: #337ab7;
 	border: none;
 	font-size: 18px;
 	font-weight: 600;
-	width: 80%;
+	width: 100%;
+	border-radius: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-top: 5px;
 }
 
 img {
@@ -86,7 +92,7 @@ img {
 }
 
 .price {
-	background-color: #EC3360;
+background-color: #EC3360;
   padding: 5px;
   border-radius: 100%;
 }
@@ -130,5 +136,11 @@ img {
   color: white;
   font-family: 'Raleway', sans-serif;
 font-weight: 400;
+}
+
+.form-group {
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
 }
 
