@@ -40,4 +40,8 @@ class UsersController < ApplicationController
       params.require(:user).permit(:email, :password, :_id)
   end
 
+  def hopbar
+    "hello wolrd"
+  end
+
 end
