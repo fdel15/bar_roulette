@@ -31,6 +31,16 @@ function success(position) {
   document.getElementById("latitude").value = latitude;
   document.getElementById("longitude").value = longitude;
 
+  geocoder = new google.maps.Geocoder();
+
+  var longs = geocoder.geocode( { 'address': "4900 Arlington Avenue, Bronx, NY"}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        console.log(results[0].geometry.location)
+      } else {
+        alert("Geocode was not successful for the following reason: " + status);
+      }
+    });
+
 }
 
 if (navigator.geolocation) {

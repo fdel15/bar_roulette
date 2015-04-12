@@ -6,7 +6,7 @@
 				</article>
 			</div>
 		</div>
-		<%= form_tag("/users/hopbar", method: "get") do %>
+		<%= form_tag("/random", method: "get") do %>
 		  <%= hidden_field_tag :latitud , 'latitude', id:'latitude'%>
 		  <%= hidden_field_tag :logitud , 'longitude', id:"longitude" %>
 		  <%= submit_tag("Hop To Bar" , class:"btn btn-default btn-lg", :id=> "some_id") %>
