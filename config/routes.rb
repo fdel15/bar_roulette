@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
   root to: "sessions#new"
   resources :users
+
+  get '/auth/:provider/callback', :to => 'sessions#createuber'
+  get '/auth/failure', :to => 'sessions#failure'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
