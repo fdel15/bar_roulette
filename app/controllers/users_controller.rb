@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  include UsersHelper
   def index
   end
 
@@ -43,6 +42,27 @@ class UsersController < ApplicationController
 
   def hopbar
     "hello wolrd"
+  end
+
+  def test
+    coordinates = { latitude: 37.7577, longitude: -122.4376 }
+    @bar = retrieve_bar(coordinates)
+    @address = bar_address
+    @image = bar_image
+    @rating = bar_rating_image
+    @status = bar_status
+
+    result = [@address, @image, @rating, @status]
+    # result = @bar
+
+
+   render text: result
+  end
+
+  private
+
+  def miles_to_meters(miles)
+    miles * 1609.34
   end
 
 end
