@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'random' => 'users#hopbar'
   get 'signup' => 'users#new'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
