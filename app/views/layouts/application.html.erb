@@ -10,6 +10,9 @@
 
 </head>
 <body>
+      <% if flash[:error] %>
+        <div class='error_message'><p class="notice"><%= flash[:error] %></p></div>
+      <% end -%>
 	<%= render "layouts/navbar" %>
 	<div class="container col-md-10 col-md-offset-1">
 		<%= yield %>
