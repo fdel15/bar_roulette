@@ -6,19 +6,18 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by(email: params[:email])
-    p params
-    p @user.password
     if @user && @user.password == params[:password]
       log_in(@user)
-      render text: current_user
+      redirect_to @user
     else
-      render text: "Log in Failed!"
+      flash[:error] = "Login failed."
+      redirect_to root_path
     end
   end
 
   def destroy
     session[:user_id] = nil
-    render text: "Logged out...for now"
+    redirect_to root_path
   end
 
 end
