@@ -6,8 +6,19 @@
 	<div class="col-sm-12 col-lg-12">
 		<div class="panel">
 			<div class="panel-heading">
-			<%= @name %>
-			<%= image_tag @rating %>
+				<div class='col-sm-4 col-lg-4'>
+					<%= image_tag @image, class:'bar-img' %>
+				</div>
+				<div class='col-sm-4 col-lg-4 black center-text'>
+					<p><%= @name %></p>
+					<p><%= @bar_description %></p>
+				</div>
+				<div class='col-sm-4 col-lg-4 black center-text'>
+					<%= image_tag @rating %>
+					<p><%=@status %></p>
+					<a href="#">Skip</a>
+				</div>
+
 			</div>
 			<div class="panel-body">
 			</div>
@@ -25,9 +36,3 @@
 		<p id='address'><%= @address %></p>
 	</div>
 </div>
-<%= @address %>
-<%= @name%>
-<%=@image%>
-<%=@rating %>
-<%=@status %>
-<%= @initial_coordinates%>

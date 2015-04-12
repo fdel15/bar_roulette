@@ -13,6 +13,15 @@ body {
 #address{
   display: none;
 }
+.black{
+  color: black;
+}
+.center-text{
+  text-align: center;
+}
+.bar-img{
+  width: 200px;
+}
 #subHeading {
 	font-family: 'Raleway', sans-serif;
 	font-weight: 400;
