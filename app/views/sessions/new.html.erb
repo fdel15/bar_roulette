@@ -2,26 +2,30 @@
 	<h3 id="heading"><span id="barTitle">Bar</span> Roulette</h3>
 	<div id="beer"><i class="fa fa-beer fa-5x"></i></div>
 	<h1 id="subHeading">One sentence about what this does</h1>
-	<div class="text-center">
-		<a href='/signup' type="button" class="btn btn-default btn-lg" data-toggle="modal" >Register Now</a href='/signup'>
-	</div>
-	<%= form_tag({controller: "sessions", action:"create"}, method: "post") do %>
+  <div class="text-center">
+      <%= form_tag({controller: "sessions", action:"create"}, method: "post") do %>
 
-  <div class="field">
-    <%= label_tag :email %><br>
-    <%= email_field_tag :email %>
-  </div>
-  <div class="field">
-    <%= label_tag :password %><br>
-    <%= password_field_tag :password %>
-  </div>
-  <div class="actions">
-    <%= submit_tag %>
-  </div>
-<% end %>
+      <div class="form-group">
+        <%= email_field_tag :email, nil, placeholder: "email", class: "form-control"%>
+      </div>
 
-	<!-- <div class="text-center"> -->
-		<!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Log In</button> -->
-<!-- 	</div> -->
-	<img class="img-responsive" id="product-image" src="" alt="">
+      <div class="form-group">
+        <%= password_field_tag :password, nil, placeholder: "password", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= submit_tag "Log In", class: "login" %>
+      </div>
+
+      <% end %>
+  </div>
+    <div class="text-center">
+    <a href='/signup' type="button" class="btn btn-default btn-lg" data-toggle="modal" >Register Now</a href='/signup'>
+  </div>
 </div>
+
+<script>
+  $(document).ready(function(){
+    $('nav').toggle();
+  });
+</script>
