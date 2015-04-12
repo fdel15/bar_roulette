@@ -12,7 +12,8 @@ class UsersController < ApplicationController
 
   def create
     params[:user][:_id] = params[:user][:email]
-    check = User.find_by(email: params[:email])
+    check = User.find_by(_id: params[:user][:email])
+    p '*'*50
     p check
     if check == nil
         @user = User.new(user_params)
