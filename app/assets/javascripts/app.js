@@ -1,5 +1,10 @@
 $(document).ready(function(){
-     geocoder = new google.maps.Geocoder();
+
+
+
+  start()
+    $('#barHop').click(function(){
+      geocoder = new google.maps.Geocoder();
 
     $.ajax({
       beforeSend: geocode_stuff()
@@ -16,7 +21,7 @@ $(document).ready(function(){
 
     })
 
-    start()
+
 
     function data_field(){
           var start_latitude = $('#start_latitude').val();
@@ -26,6 +31,7 @@ $(document).ready(function(){
           return "{start_latitude:"+ start_latitude + ",start_longitude:"+start_longitude+",end_latitude:"+end_latitude+",end_longitude:"+end_longitude+"}"
 
         }
+    });
 });
 
 
