@@ -1,16 +1,15 @@
 <!-- Set Your Variables Here -->
 <% est = "$8-10" %>
-<% stars = "http://tinyurl.com/odzxoo7" %>
 <% restaurant = {name: "Tony's", address: ""} %>
 
 <div class="row">
 	<div class="col-sm-12 col-lg-12">
 		<div class="panel">
 			<div class="panel-heading">
-			<%= image_tag stars %>
+			<%= @name %>
+			<%= image_tag @rating %>
 			</div>
 			<div class="panel-body">
-
 			</div>
 		</div>
 		<%= form_tag("/random", method: "get") do %>
