@@ -10,7 +10,9 @@ body {
 	text-align: center;
 }
 
-
+#address{
+  display: none;
+}
 #subHeading {
 	font-family: 'Raleway', sans-serif;
 	font-weight: 400;
@@ -68,7 +70,7 @@ body {
 
 img {
   margin-left: auto;
-  margin-right: auto;	
+  margin-right: auto;
   display: block;
   clear: both;
 }
