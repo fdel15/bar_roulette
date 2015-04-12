@@ -7,9 +7,11 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find_by(id: current_user)
   end
 
   def create
+    params[:user][:_id] = params[:user][:email]
     @user = User.new(user_params)
 
     respond_to do |format|
@@ -25,7 +27,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-      params.require(:user).permit(:email, :password)
+      params.require(:user).permit(:email, :password, :_id)
   end
 
 end
