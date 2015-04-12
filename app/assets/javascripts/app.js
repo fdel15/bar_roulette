@@ -1,14 +1,15 @@
 $(document).ready(function(){
 
 
-
-  start()
-    $('#barHop').click(function(){
+    // $('#barHop').click(function(e){
+    //   // e.preventDefault()
+    //   console.log('clicked')
       geocoder = new google.maps.Geocoder();
 
     $.ajax({
       beforeSend: geocode_stuff()
-    }).done(function(){
+    }).done(function(response){
+      console.log('lolo')
         $.ajax({
         url:"/uber",
         type: 'POST',
@@ -17,11 +18,9 @@ $(document).ready(function(){
         }).done(function(response){
           console.log(response)
           console.log('yes')
-      });
+        });
 
     })
-
-
 
     function data_field(){
           var start_latitude = $('#start_latitude').val();
@@ -29,15 +28,16 @@ $(document).ready(function(){
           var end_latitude = $('#end_latitude').val();
           var end_longitude = $('#end_longitude').val();
           return "{start_latitude:"+ start_latitude + ",start_longitude:"+start_longitude+",end_latitude:"+end_latitude+",end_longitude:"+end_longitude+"}"
-
         }
-    });
+    // });
+
+    start()
 });
 
 
 function geocode_stuff(){
 var address = document.getElementById("address").innerHTML
-
+console.log(address)
       var longs = geocoder.geocode( { 'address': address}, function(results, status) {
           if (status == google.maps.GeocoderStatus.OK) {
             console.log(results[0].geometry.location)
