@@ -6,13 +6,29 @@
 	<div class="col-sm-12 col-lg-12">
 		<div class="panel">
 			<div class="panel-heading">
-			<%= @name %>
-			<%= image_tag @rating %>
+				<div class='col-sm-4 col-lg-4'>
+					<%= image_tag @image, class:'bar-img' %>
+				</div>
+				<div class='col-sm-4 col-lg-4 black center-text info-restaurant'>
+					<p class='restaurant-name'><%= @name %></p>
+					<p class='restaurant-description'><%= @bar_description %></p>
+				</div>
+				<div class='col-sm-4 col-lg-4 black center-text'>
+					<%= image_tag @rating, class:'bar-rating' %>
+					<p class='restaurant-status'><%=@status %></p>
+					<%= form_tag("/random", method: "get") do %>
+					  <%= hidden_field :coordinates , :latitude, value:"#{@initial_coordinates['latitude']}"%>
+					  <%= hidden_field :coordinates , :longitude, value:"#{@initial_coordinates['longitude']}"%>
+					  <%= submit_tag('Skip', id:"barHop-skip")%>
+					<% end %>
+					<!-- <a href="#"> <i class="fa fa-repeat fa-3x"></i></a> -->
+				</div>
+
 			</div>
 			<div class="panel-body">
 			</div>
 		</div>
-		<%= form_tag("/random", method: "get") do %>
+		<%= form_tag("/uber", method: "get") do %>
 		  <%= hidden_field :coordinates , :start_latitude, value:"#{@initial_coordinates['latitude']}", id:"start_latitude"%>
 		  <%= hidden_field :coordinates , :start_longitude, value:"#{@initial_coordinates['longitude']}", id:'start_longitude' %>
 		  <%= hidden_field :coordinates , :end_latitude, value:"end_lat", id:"end_latitude"%>
@@ -25,9 +41,3 @@
 		<p id='address'><%= @address %></p>
 	</div>
 </div>
-<%= @address %>
-<%= @name%>
-<%=@image%>
-<%=@rating %>
-<%=@status %>
-<%= @initial_coordinates%>

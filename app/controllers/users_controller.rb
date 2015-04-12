@@ -44,6 +44,7 @@ class UsersController < ApplicationController
     @rating = bar_rating_image
     @status = bar_status
     @name = bar_name
+    @bar_description = bar_description
     render 'hopbar.html.erb'
   end
 
