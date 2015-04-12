@@ -46,3 +46,5 @@ end
 
 gem "twitter-bootstrap-rails"
 gem 'google-webfonts-rails'
+gem 'omniauth'
+gem 'omniauth-uber'
