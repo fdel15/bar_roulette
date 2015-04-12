@@ -24,6 +24,13 @@ function success(position) {
       map: map,
       title:"You are here!"
   });
+
+  var latitude = position.coords.latitude;
+  var longitude = position.coords.longitude;
+
+  document.getElementById("latitude").value = latitude;
+  document.getElementById("longitude").value = longitude;
+
 }
 
 if (navigator.geolocation) {
@@ -31,3 +38,4 @@ if (navigator.geolocation) {
 } else {
   error('Geo Location is not supported');
 }
+
