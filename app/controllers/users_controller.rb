@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  require 'uri'
+  require 'open-uri'
+
   def index
   end
 
@@ -57,6 +60,29 @@ class UsersController < ApplicationController
         render text: "not supose to"
       }
     end
+  end
+
+  def test
+
+    uber = UBER_CLIENT
+    url = 'https://api.uber.com/v1/estimates/price'
+    # p response
+    uber_params = {
+      server_token: ENV["UBER_CLIENT_TOKEN"],
+      start_latitude: 37.775818 ,
+      start_longitude: -122.418028,
+      end_latitude: 36.775818 ,
+      end_longitude: -122.418028
+    }
+    uri = URI.parse(url)
+
+    uri.query = URI.encode_www_form( uber_params )
+
+    response = uri.open.read
+
+    p "*" *100
+    p response
+    render text: response
   end
 
   private
