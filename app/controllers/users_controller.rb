@@ -12,20 +12,26 @@ class UsersController < ApplicationController
 
   def create
     params[:user][:_id] = params[:user][:email]
-    @user = User.new(user_params)
-
-    respond_to do |format|
-      if @user.save
-        log_in(@user)
-        format.html {  redirect_to @user, notice: 'user was successfully created.' }
-        format.json { render text: 'no', status: :created, location: @user }
-      else
-        format.html {
-          flash[:failure] = "Failed to create user. (check email or password)"
-          render :new
-        }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    check = User.find_by(email: params[:email])
+    p check
+    if check == nil
+        @user = User.new(user_params)
+        respond_to do |format|
+          if @user.save
+            log_in(@user)
+            format.html {  redirect_to @user, notice: 'user was successfully created.' }
+            format.json { render text: 'no', status: :created, location: @user }
+          else
+            format.html {
+              flash[:error] = "Failed to create user. (check email or password)"
+              render :new
+            }
+            format.json { render json: @user.errors, status: :unprocessable_entity }
+          end
+        end
+    else
+      flash[:error] = "Failed to create user. (check email or password)"
+      redirect_to "/signup"
     end
   end
 
