@@ -37,10 +37,8 @@ class UsersController < ApplicationController
   end
 
   def hopbar
-    p '*'*100
-    p params
-    coordinates = params[:coordinates]
-    @bar = retrieve_bar(coordinates)
+    @initial_coordinates = params[:coordinates]
+    @bar = retrieve_bar(@initial_coordinates)
     @address = bar_address
     @image = bar_image
     @rating = bar_rating_image
@@ -48,32 +46,25 @@ class UsersController < ApplicationController
     @name = bar_name
     render 'hopbar.html.erb'
   end
+
+  def get_uber
+    p "-"*100
+    p params
+    respond_to do |format|
+      format.json{ render text:"200"}
+      format.html{
+        render text: "not supose to"
+      }
+    end
+  end
+
   private
     def user_params
         params.require(:user).permit(:email, :password, :_id)
     end
 
-
-
-  def test
-    coordinates = { latitude: 37.7577, longitude: -122.4376 }
-    @bar = retrieve_bar(coordinates)
-    @address = bar_address
-    @image = bar_image
-    @rating = bar_rating_image
-    @status = bar_status
-
-    result = [@address, @image, @rating, @status]
-    # result = @bar
-
-
-   render text: result
-  end
-
-  private
-
-  def miles_to_meters(miles)
-    miles * 1609.34
-  end
+    def miles_to_meters(miles)
+      miles * 1609.34
+    end
 
 end
